@@ -1,0 +1,35 @@
+﻿@model List<INS>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Salary</th>
+            <th>IMG</th>
+
+            <th> </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var INS in Model)
+        {
+            <tr>
+                <td>@INS.Id</td>
+                <td>@INS.Name</td>
+                <td>@INS.Address</td>
+                <td>@INS.Salary</td>
+                <td><img src="@INS" /></td>
+
+                <td>
+                    <a class="btn btn-primary"
+                       asp-controller="INS"
+                       asp-action="Details"
+                       asp-route-id="@INS.Id">Details</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
